@@ -1,47 +1,55 @@
+import java.time.LocalDate;
 import java.util.Arrays;
 
 /**
  * Startup
  */
 public class Startup {
+    static int classLocal;
 
     public static void main(String[] args) {
-        Circle circle = new Circle();
-        circle.radius = 5;
-        System.out.println("Circle 1s radius" + circle);
-        
-        System.out.println(getVowels("vetstotech"));
-        System.out.println(vowels("vetstotech"));
-
-        Circle circle2 = new Circle();
-        System.out.println("Circle 2s radius" + circle2);
-
-
-        circle.radius = 10;
-
-
-        int radius = 5;
-        System.out.println("radius1 " + radius);
-
-        int radius2 = radius;
-        System.out.println("radius2 " + radius2);
-
-        radius = 76;
-        System.out.println("radius 2 " + radius2);
-
-        String name = "Liam";
-        String name1 = "Liam";
-
-        System.out.println(name.substring(1, name.length()));
-
         Student student = new Student();
-        System.out.println(student.name);
+        student.major = Major.COMPUTERSCIENCE;
         student.name = "Liam";
-        System.out.println(student.name);
-        student.GPA = Float.parseFloat("3.99");
-        System.out.println("GPA " + student.GPA);
-    }
+        student.dateOfBirth = LocalDate.of(1997, 11, 12);
+        System.out.println(student.toString("Murphy"));
+        System.out.println(student.getAge());
 
+        Student student2 = new Student();
+        student2.major = Major.PSYCHOLOGY;
+        student2.name = "Gerald";
+        student2.dateOfBirth = LocalDate.of(1969, 11, 12);
+        System.out.println(student2);
+        System.out.println(student2.getAge());
+
+        if(student.major == Major.COMPUTERSCIENCE) {
+            System.out.println("Computers are the best");
+        }
+        Car car1 = new Car();
+        car1.setHorsePower(14);
+        car1.setCarStyle(CarStyle.SUV);;
+        car1.setPowerType(PowerType.UNLEADED);;
+
+        Car car2 = new Car();
+        Car car3 = new Car();
+        car3.setHorsePower(195);;
+
+        System.out.println(car1.getHorsePower());
+        System.out.println(car2.getHorsePower());
+        System.out.println(car3.getHorsePower());
+
+
+        Instructor teacher= new Instructor();
+        teacher.email = "swagbruh@gmail.com";
+        Instructor teacher2 = new Instructor();
+        
+    }
+    /*public static double harmonic(int n) {
+        int local = 0;
+        System.out.println(local);
+        System.out.println(classLocal); */
+
+    
  public static int vowels(String testString) {
         int numVowels = 0;
         char[] vowelsArr = {'a', 'e', 'i', 'o', 'u'};
@@ -56,7 +64,7 @@ public class Startup {
         return numVowels;
     }
 
-public static int getVowels(String term) {
+/*public static int getVowels(String term) {
     String lowerCased = term.toLowerCase();
     int counter = 0;
     for(int i = 0; i < term.length(); i++) {
@@ -68,7 +76,7 @@ public static int getVowels(String term) {
     }
     return counter;
 
-}
+} */
 }    
         
 
